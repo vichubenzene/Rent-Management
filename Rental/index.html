@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="#addTenantForm">Add Tenant</a></li>
+            <li><a href="#checkRentForm">Check Pending Rent</a></li>
+            <li><a href="#updateRentForm">Update Rent</a></li>
+            <li><a href="#payRentForm">Pay Rent</a></li>
+            <li><a href="#incrementRentForm">Increment Rent</a></li>
+            <li><a href="#viewProfileForm">View Profile</a></li>
+            <li><a href="#">Export CSV</a></li>
+            <li><a href="#">Import CSV</a></li>
+        </ul>
+    </div>
+    <main>
+        <section class="container" id="addTenantForm">
+            <h2>Add New Tenant</h2>
+            <form>
+                <input type="text" id="name" placeholder="Tenant Name" required>
+                <input type="text" id="phone" placeholder="Phone Number" required>
+                <input type="date" id="lastRentDate">
+                <button type="button" onclick="addTenant()">Add Tenant</button>
+            </form>
+        </section>
+
+        <section class="container" id="checkRentForm">
+            <h2>Check Pending Rent</h2>
+            <form>
+                <input type="text" id="checkName" placeholder="Tenant Name" required>
+                <button type="button" onclick="checkPendingRent()">Check Pending Rent</button>
+                <p id="rentResult"></p>
+            </form>
+        </section>
+
+        <section class="container" id="updateRentForm">
+            <h2>Update Rent</h2>
+            <form>
+                <input type="text" id="updateName" placeholder="Tenant Name" required>
+                <input type="date" id="updateDate">
+                <button type="button" onclick="updateRent()">Update Rent</button>
+            </form>
+        </section>
+
+        <section class="container" id="payRentForm">
+            <h2>Pay Rent</h2>
+            <form>
+                <input type="text" id="payName" placeholder="Tenant Name" required>
+                <input type="number" id="payAmount" placeholder="Amount" step="0.01" required>
+                <input type="date" id="payDate">
+                <button type="button" onclick="payRent()">Pay Rent</button>
+            </form>
+        </section>
+
+        <section class="container" id="incrementRentForm">
+            <h2>Increment Rent</h2>
+            <form>
+                <input type="text" id="incrementName" placeholder="Tenant Name" required>
+                <input type="number" id="incrementAmount" placeholder="Increment Amount" step="0.01" required>
+                <button type="button" onclick="incrementRent()">Increment Rent</button>
+            </form>
+        </section>
+
+        <section class="container" id="viewProfileForm">
+            <h2>View Tenant Profile</h2>
+            <form>
+                <input type="text" id="profileName" placeholder="Tenant Name" required>
+                <button type="button" onclick="viewProfile()">View Profile</button>
+                <p id="profileResult"></p>
+            </form>
+        </section>
+
+        <section class="container">
+            <h2>Export/Import CSV</h2>
+            <button onclick="exportCSV()">Export CSV</button>
+            <input type="file" id="importFile" accept=".csv">
+            <button onclick="importCSV()">Import CSV</button>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
